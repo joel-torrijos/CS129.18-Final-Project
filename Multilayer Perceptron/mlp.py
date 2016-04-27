@@ -5,7 +5,7 @@ Created on Wed Apr 27 16:28:10 2016
 @author: Jose Emmanuel
 """
 from layer import Layer
-from Neuron import Neuron
+from neuron import Neuron
 import math
 
 class MultilayerPerceptron:
@@ -84,7 +84,6 @@ class MultilayerPerceptron:
                 hiddenLayer.mNeurons[n].calculateHiddenGradient(nextLayer.getNeurons())
                 
         for layer_index in range(len(self.layers)-1,0,-1):
-
             layer = self.layers[layer_index]
             previousLayer = self.layers[layer_index-1]
             

@@ -36,13 +36,13 @@ class Neuron:
     def updateInputWeights(self,previousLayerNeurons):
         eta = 0.15
         alpha = 0.5
-        for i in range(0,len(previousLayerNeurons)-1):
+        for i in range(len(previousLayerNeurons)-1):
             n = previousLayerNeurons[i]
             oldDeltaWeight = n.outputWeights[self.ide].deltaValue
             newDeltaWeight = 0.15 * n.value * self.gradient + 0.5 * oldDeltaWeight
             
-            n.outputWeights[self.ide].deltaWeight = newDeltaWeight
-            n.outputWeights[self.ide].deltaWeight  += newDeltaWeight
+            n.outputWeights[self.ide].deltaValue = newDeltaWeight
+            n.outputWeights[self.ide].value  += newDeltaWeight
             
             #n.outputWeights[self.ide] = w
             #previousLayerNeurons[i] = n
